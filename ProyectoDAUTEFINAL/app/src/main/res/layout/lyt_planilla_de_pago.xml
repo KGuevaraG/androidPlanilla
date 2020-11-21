@@ -62,10 +62,6 @@
                         android:background="#FFFFFF" />
                 </TableRow>
 
-                <TableRow/>
-
-                <TableRow/>
-
                 <TableRow>
 
                     <TextView
@@ -186,7 +182,6 @@
                 </TableRow>
 
             </TableLayout>
-
 
 
         </LinearLayout>

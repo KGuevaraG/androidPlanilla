@@ -22,6 +22,8 @@ public class Planilla_de_pago extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lyt_planilla_de_pago);
 
+
+
         rango = findViewById(R.id.txt_Fecha);
         nombre = findViewById(R.id.txt_Nombre_empleado);
         salario = findViewById(R.id.txt_Salario);
@@ -29,8 +31,8 @@ public class Planilla_de_pago extends AppCompatActivity {
         extras = findViewById(R.id.txt_Horas_extras);
         isss1 = findViewById(R.id.txt_Isss_empleado);
         afp1 = findViewById(R.id.txt_Afp_empleado);
-        isss1 = findViewById(R.id.txt_Isss);
-        afp1 = findViewById(R.id.txt_Afp);
+        isss2 = findViewById(R.id.txt_Isss);
+        afp2 = findViewById(R.id.txt_Afp);
         total = findViewById(R.id.txt_Total);
 
         Bundle bundle = getIntent().getExtras();
@@ -44,8 +46,11 @@ public class Planilla_de_pago extends AppCompatActivity {
                 float sal =Float.parseFloat(jsonObject.getString("salario"));
                 float af1= (float) (sal*0.0585);
                 float af2= (float) (sal*0.0725);
-                float iss1= (float) (sal*0.077);
+                float iss1= (float) (sal*0.075);
                 float iss2= (float) (sal*0.075);
+
+                float tot = sal-(af1+iss1);
+
                 rango.setText(jsonObject.getString("inicio")+"-"+jsonObject.getString("fin"));
                 nombre.setText(jsonObject.getString("nombre")+" "+jsonObject.getString("apellido"));
                 salario.setText(jsonObject.getString("salario"));
@@ -55,6 +60,7 @@ public class Planilla_de_pago extends AppCompatActivity {
                 afp2.setText(af2+"");
                 isss1.setText(iss1+"");
                 isss2.setText(iss2+"");
+                total.setText(tot+"");
             }
         } catch (JSONException e) {
             e.printStackTrace();

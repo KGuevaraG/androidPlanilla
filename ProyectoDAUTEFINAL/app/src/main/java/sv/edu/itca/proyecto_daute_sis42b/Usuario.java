@@ -144,6 +144,4 @@ public class Usuario extends AppCompatActivity {
 
 
     }
-
-
 }
