@@ -62,33 +62,9 @@
                         android:background="#FFFFFF" />
                 </TableRow>
 
-                <TableRow>
+                <TableRow/>
 
-                    <TextView
-                        android:padding="3dp"
-                        android:text="@string/texto_tabla_Cargo"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txt_Cargo"
-                        android:layout_marginHorizontal="1dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#FFFFFF" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:padding="3dp"
-                        android:text="@string/texto_Departamento"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txt_Departamento"
-                        android:layout_marginHorizontal="1dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#FFFFFF" />
-                </TableRow>
+                <TableRow/>
 
                 <TableRow>
 
@@ -127,6 +103,36 @@
 
                     <TextView
                         android:id="@+id/txt_Horas_extras"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+                <TextView
+                    android:text="Descuentos"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_ISSS"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Isss_empleado"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_AFP"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Afp_empleado"
                         android:layout_marginHorizontal="1dp"
                         android:layout_marginBottom="1dp"
                         android:background="#FFFFFF" />
@@ -181,26 +187,7 @@
 
             </TableLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:gravity="center"
-                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btn_Mes_anterior"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/boton_Mes_anterior" />
-
-                <Button
-                    android:id="@+id/btn_Mes_actual"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/boton_Mes_actual" />
-
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

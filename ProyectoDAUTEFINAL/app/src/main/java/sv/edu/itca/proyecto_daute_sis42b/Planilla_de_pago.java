@@ -9,13 +9,56 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Planilla_de_pago extends AppCompatActivity {
-
+    private TextView rango, horas, extras, nombre, isss1,isss2, afp1,afp2, total, salario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lyt_planilla_de_pago);
+
+        rango = findViewById(R.id.txt_Fecha);
+        nombre = findViewById(R.id.txt_Nombre_empleado);
+        salario = findViewById(R.id.txt_Salario);
+        horas = findViewById(R.id.txt_Horas_trabajadas);
+        extras = findViewById(R.id.txt_Horas_extras);
+        isss1 = findViewById(R.id.txt_Isss_empleado);
+        afp1 = findViewById(R.id.txt_Afp_empleado);
+        isss1 = findViewById(R.id.txt_Isss);
+        afp1 = findViewById(R.id.txt_Afp);
+        total = findViewById(R.id.txt_Total);
+
+        Bundle bundle = getIntent().getExtras();
+        String datos = bundle.getString("datos");
+
+        try {
+            JSONObject jsonObject = new JSONObject(datos);
+            if (jsonObject==null){
+                Toast.makeText(getApplicationContext(),"Json vacio",Toast.LENGTH_LONG).show();
+            }else {
+                float sal =Float.parseFloat(jsonObject.getString("salario"));
+                float af1= (float) (sal*0.0585);
+                float af2= (float) (sal*0.0725);
+                float iss1= (float) (sal*0.077);
+                float iss2= (float) (sal*0.075);
+                rango.setText(jsonObject.getString("inicio")+"-"+jsonObject.getString("fin"));
+                nombre.setText(jsonObject.getString("nombre")+" "+jsonObject.getString("apellido"));
+                salario.setText(jsonObject.getString("salario"));
+                horas.setText(jsonObject.getString("horasnormales"));
+                extras.setText(jsonObject.getString("horasextras"));
+                afp1.setText(af1+"");
+                afp2.setText(af2+"");
+                isss1.setText(iss1+"");
+                isss2.setText(iss2+"");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         //Titulo para Planilla de pago
         setTitle(R.string.tituloPlanilla);

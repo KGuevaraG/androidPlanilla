@@ -117,8 +117,32 @@ public class Usuario extends AppCompatActivity {
 
     //Pantalla de Planilla de pago de Usuario
     public void ProcesoPlanilladepago(View v){
-        Intent ventana = new Intent(Usuario.this,Planilla_de_pago.class);
-        startActivity(ventana);
+
+        RequestParams params = new RequestParams();
+        params.put("id",id);
+
+        AsyncHttpClient client = new AsyncHttpClient();
+
+        String url="http://192.168.1.2/appplanilla/planilla.php";
+
+        client.post(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode==200){
+                    String datos = new String(responseBody);
+                    Intent ventana = new Intent(Usuario.this,Planilla_de_pago.class);
+                    ventana.putExtra("datos",datos);
+                    startActivity(ventana);
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+
     }
 
 
