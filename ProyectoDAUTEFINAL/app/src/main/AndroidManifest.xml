@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sv.edu.itca.proyecto_daute_sis42b">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Informacion_Horas_trabajadas"></activity>
+        <activity android:name=".Registro_con_codigo" />
+        <activity android:name=".Cargos" />
+        <activity android:name=".Modificar_dato_Admin" />
+        <activity android:name=".Modificar_dato_empleado" />
+        <activity android:name=".Departamentos" />
+        <activity android:name=".Planilla_de_pago" />
+        <activity android:name=".Registro_de_usuario" />
+        <activity android:name=".Usuario" />
+        <activity android:name=".Administrador" />
+        <activity android:name=".Iniciar_Sesion">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

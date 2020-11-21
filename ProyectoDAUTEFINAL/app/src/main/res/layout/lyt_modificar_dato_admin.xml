@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".Modificar_dato_Admin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--el Admin podrá modificar todos Estos campos-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_modificar_datos_administrador"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <!--acá se debe mostrar el nombre que queremos modificar-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_nombre_usuario"
+                android:layout_marginTop="10dp"
+                android:textColor="#0B0B0B" />
+
+            <!--y acá el nombre nuevo de usuario que queremos poner-->
+
+            <EditText
+                android:id="@+id/et_Admin_Usuarioanterior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="@string/hint_nombre_antiguo" />
+
+            <EditText
+                android:id="@+id/et_Admin_UsuarioNuevo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="@string/hint_usuario_nuevo" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_contrasena"
+                android:textColor="#0B0B0B" />
+
+            <EditText
+                android:id="@+id/et_Admin_ContraseñaAntigua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/hint_contrasena_antigua" />
+
+            <EditText
+                android:id="@+id/et_Admin_ContraseñaNueva"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/hint_contrasena_nueva" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_numero_de_telefono"
+                android:textColor="#0B0B0B" />
+
+            <EditText
+                android:id="@+id/et_Admin_TelefonoNuevoadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/hint_telefono_nuevo"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_Departamento"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_Admin_DepartamentoNuevoadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/hint_nuevo_departamento" />
+
+            <Button
+                android:id="@+id/btnCancelaradmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boton_Cancelar" />
+
+            <Button
+                android:id="@+id/btnActualizaradmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boton_Actualizar" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">Proyecto-DAUTE-SIS42B</string>
+
+    <!-- TITULOS -->
+    <string name="tituloIniciarSesion">Iniciar Sesion</string>
+    <string name="tituloUsuario">Bienvenido Usuario</string>
+    <string name="tituloAdmnistrador">Bienvenido Administrador</string>
+    <string name="tituloOpciones">Opciones</string>
+    <string name="tituloPlanilla">Planilla de pago</string>
+    <string name="tituloCargos">Administrar Cargos</string>
+    <string name="tituloDepartamentos">Administrar Departamentos</string>
+    <string name="titulo_Modificar_Empleado">Modificar datos Empleado</string>
+    <string name="titulo_modificar_datos_administrador">Modificar datos Administrador</string>
+    <string name="titulo_registro_de_usuario">Registro de Usuario</string>
+    <string name="titulo_Administrar_empleados">Administrar Empleados</string>
+    <string name="tituloAdministrar_asistencia">Administrar Asistencia</string>
+    <string name="titulo_Registro_con_codigo">Registro con Código</string>
+    <string name="titulo_Informacion_de_horas_trabajadas">Informacion de Horas Trabajadas</string>
+    <string name="titulo_administrar_planilla_de_pago">Administrar Planilla de Pago</string>
+    <string name="titulo_Bienvenido_usuario">Bienvenido Usuario</string>
+
+    <!-- BOTONES -->
+    <string name="boton_Agregar">Agregar</string>
+    <string name="boton_Modificar">Modificar</string>
+    <string name="boton_Eliminar">Eliminar</string>
+    <string name="boton_Iniciarsesion">Iniciar Sesión</string>
+    <string name="boton_Registrarse">Registrase</string>
+    <string name="boton_Marcarasistencia_entrada">Marcar entradasalida</string>
+    <string name="boton_Planilla_de_pago">Ver Planilla de pago</string>
+    <string name="boton_Mes_anterior">Mes Anterior</string>
+    <string name="boton_Mes_actual">Mes Actual</string>
+    <string name="boton_Guardar">Guardar</string>
+    <string name="boton_Cancelar">Cancelar</string>
+    <string name="boton_Actualizar">Actualizar Datos</string>
+    <string name="boton_registrarse">Registrarse</string>
+    <string name="boton_Modificar_planilla">Modificar Planilla</string>
+
+    <!-- TEXTO DE ADMINISTRADOR -->
+    <string name="texto_Departamento">Departamento:</string>
+    <string name="texto_tabla_ID">ID</string>
+    <string name="texto_tabla_Nombre">Nombre</string>
+    <string name="texto_tabla_Apellido">Apellido</string>
+    <string name="texto_tabla_Usuario">Nombre de usuario</string>
+    <string name="texto_tabla_Contrasena">Contraseña</string>
+    <string name="texto_tabla_Telefono">Numero de telefono</string>
+    <string name="texto_tabla_Departamento">Departamento</string>
+    <string name="hint_Agregar_departamento">Agregar Departamento</string>
+    <string name="hint_Agregar_cargo">Agregar Cargo</string>
+    <string name="texto_tabla_Cargo">Cargo</string>
+    <string name="hint_Buscar">Buscar</string>
+    <string name="texto_Buscar_empleado">Buscar Empleado</string>
+
+
+    <!-- TEXTO DE INICIAR SESION -->
+    <string name="hint_Usuario">Usuario</string>
+    <string name="hint_Contrasena">Contraseña</string>
+    <string name="texto_icono_login">icono_login</string>
+
+    <!-- TEXTO DE TABLA PLANILLA DE PAGO -->
+    <string name="texto_tabla_Fecha">Rango de fechas</string>
+    <string name="texto_tabla_Nombre_de_empleado">Nombre del empleado:</string>
+    <string name="texto_tabla_Salario">Salario</string>
+    <string name="texto_tabla_Horas_trabajadas">Horas Trabajadas</string>
+    <string name="texto_tabla_Horas_extras">Horas Extras</string>
+    <string name="texto_tabla_Aporte_patronal">Aporte Patronal</string>
+    <string name="texto_tabla_ISSS">ISSS</string>
+    <string name="texto_tabla_AFP">AFP</string>
+    <string name="texto_tabla_Total">Total:</string>
+    <string name="texto_tabla_planilla_de_pago">Planilla de pago</string>
+
+
+    <!--MODIFICAR DATOS EMPLEADO-->
+    <string name="texto_nombre_usuario">Nombre Usuario</string>
+    <string name="hint_nombre_antiguo">Agregue nombre antiguo</string>
+    <string name="hint_usuario_nuevo">Agregue usuario nuevo</string>
+    <string name="texto_contrasena">Contraseña</string>
+    <string name="hint_contrasena_antigua">Introduzca Contraseña antigua</string>
+    <string name="hint_contrasena_nueva">Introduzca Contraseña nueva</string>
+    <string name="texto_numero_de_telefono">Número de teléfono</string>
+    <string name="hint_telefono_nuevo">Introduzca Teléfono Nuevo</string>
+    <string name="texto_departamento">Departamento</string>
+    <string name="hint_nuevo_departamento">Nuevo Departamento</string>
+
+
+    <!--MODIFICAR DATOS ADMINSTRADOR-->
+    <string name="hint_introduzca_nombre">Introduzca Nombre</string>
+    <string name="hint_introduzca_apellido">Introduzca Apellido</string>
+    <string name="hint_introduzca_usuario">Introduzca Usuario</string>
+    <string name="hint_introduzca_contrase_a">Introduzca Contraseña</string>
+    <string name="hint_introduzca_tel_fono">Introduzca Teléfono</string>
+    <string name="hint_introduzca_departamento">Introduzca Departamento</string>
+
+
+    <!--HORAS TRABAJADAS-->
+    <string name="texto_tabla_Dias_trabajados">Días trabajados</string>
+    <string name="titulo_tabla_Paga_por_horas_trabajadas">Paga por horas trabajadas</string>
+
+
+
+</resources>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Planilla_de_pago">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F1F1F1"
+                android:text="@string/texto_tabla_planilla_de_pago"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <!-- TABLA PARA PLANILLA DE PAGO -->
+            <TableLayout
+                android:id="@+id/tabla_Usuario_Planilla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F1F1F1"
+                android:stretchColumns="1">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Fecha"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Fecha"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Nombre_de_empleado"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Nombre_empleado"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Cargo"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Cargo"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_Departamento"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Departamento"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Salario"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Salario"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Horas_trabajadas"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Horas_trabajadas"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Horas_extras"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Horas_extras"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TextView
+                    android:text="@string/texto_tabla_Aporte_patronal"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_ISSS"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Isss"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_AFP"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Afp"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Total"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_Total"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="#FFFFFF" />
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_Mes_anterior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/boton_Mes_anterior" />
+
+                <Button
+                    android:id="@+id/btn_Mes_actual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/boton_Mes_actual" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

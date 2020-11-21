@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Departamentos">
+
+    <!--TITULO-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tituloDepartamentos"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!--LINEAR GENERAL PARA TABLA Y BOTONES-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- TABLA PARA DEPARTAMENTOS -->
+            <TableLayout
+                android:id="@+id/tabla_Admin_Departamentos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#F1F1F1"
+                android:stretchColumns="2">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="" />
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_ID"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/texto_tabla_Departamento"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <!-- FILA PARA CONTROLAR LOS TEXTVIEW -->
+                <TableRow>
+
+                    <RadioButton
+                        android:id="@+id/rb_Seleccionar_departamento"
+                        android:background="#FFFFFF"/>
+
+                    <TextView android:id="@+id/txt_ID_departamento" />
+
+                    <TextView android:id="@+id/txt_Nombre_departamento" />
+                </TableRow>
+
+            </TableLayout>
+
+
+            <EditText
+                android:id="@+id/et_Agregar_departamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:hint="@string/hint_Agregar_departamento"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <!-- LINEAR PARA LOS BOTONES -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_Agregar_departamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/boton_Agregar" />
+
+                <!-- LINEAR PARA BOTON MODIFICAR Y ELIMINAR-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_Modificar_departamento"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/boton_Modificar" />
+
+                    <Button
+                        android:id="@+id/btn_Eliminar_departamento"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/boton_Eliminar" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Informacion_Horas_trabajadas">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_Informacion_de_horas_trabajadas"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!-- LINEAR PARA TABLAS Y SCROLL -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:id="@+id/tabla_mostrar_horas_trabajadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F1F1F1"
+                    android:stretchColumns="1">
+
+                    <!-- FILA CON NOMBRES-->
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/texto_tabla_Fecha"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Fecha"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/texto_tabla_Nombre"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Nombre_Empleado"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/texto_tabla_Apellido"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Apellido"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/texto_tabla_Salario"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Salario"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/texto_tabla_Dias_trabajados"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Dias_trabajados"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/texto_tabla_Horas_trabajadas"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Horas_trabajadas"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:padding="3dp"
+                            android:text="@string/titulo_tabla_Paga_por_horas_trabajadas"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_HT_Paga_por_horas_"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginBottom="1dp"
+                            android:background="#FFFFFF" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+
+            </LinearLayout><!-- FIN DE TABLA -->
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/boton_Actualizar" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boton_Cancelar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

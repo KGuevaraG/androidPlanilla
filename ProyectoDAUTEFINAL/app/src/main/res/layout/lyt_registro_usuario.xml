@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".Registro_de_usuario">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/titulo_registro_de_usuario"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:hint="@string/hint_introduzca_nombre"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_Apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:hint="@string/hint_introduzca_apellido"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_NombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_introduzca_usuario"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_Contrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_introduzca_contrase_a"
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_NumeroTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_introduzca_tel_fono"
+            android:importantForAutofill="no"
+            android:inputType="number" />
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btn_Registrarse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/boton_registrarse" />
+
+        <Button
+            android:id="@+id/btn_Cancelar_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/boton_Cancelar" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

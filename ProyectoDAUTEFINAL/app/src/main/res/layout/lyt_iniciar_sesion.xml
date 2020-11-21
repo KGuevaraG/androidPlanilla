@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorNegro"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Iniciar_Sesion">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/texto_icono_login"
+                android:src="@drawable/login" />
+
+            <EditText
+                android:id="@+id/et_Usuario_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_Usuario"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="@color/colorBlanco"
+                android:textColorHint="@color/colorGris" />
+
+            <EditText
+                android:id="@+id/et_Contrasenia_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_Contrasena"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textColor="@color/colorBlanco"
+                android:textColorHint="@color/colorGris" />
+
+            <Button
+                android:id="@+id/btn_Iniciar_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorVerde"
+                android:onClick="ProcesoIniciarSesion"
+                android:text="@string/boton_Iniciarsesion" />
+
+            <Button
+                android:id="@+id/btn_Registrarse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGris"
+                android:onClick="ProcesoRegistro"
+                android:text="@string/boton_Registrarse" />
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGris"
+                android:onClick="ProcesoUsuario"
+                android:text="solo para probar usuario" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

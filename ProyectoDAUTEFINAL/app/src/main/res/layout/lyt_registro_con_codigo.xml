@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:layout_gravity="center"
+    tools:context=".Registro_con_codigo">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registro de Usuario"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingrese Codigo de ingreso"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_codigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese Código"/>
+
+            <Button
+                android:id="@+id/btn_ingresar_codigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boton_Registrarse"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
