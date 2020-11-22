@@ -72,11 +72,6 @@
             android:maxLength="9"
             />
 
-        <ImageView
-            android:id="@+id/foto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
 
         <Button
             android:id="@+id/btn_Registrarse"
@@ -90,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/boton_Cancelar" />
+            android:text="@string/boton_Cancelar"
+            android:onClick="cancelar"/>
 
         </LinearLayout>
 

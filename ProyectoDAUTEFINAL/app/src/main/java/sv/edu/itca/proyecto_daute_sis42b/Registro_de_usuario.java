@@ -21,9 +21,10 @@ import cz.msebera.android.httpclient.Header;
 import static java.security.AccessController.getContext;
 
 public class Registro_de_usuario extends AppCompatActivity {
-    private EditText nombre, apellido, user, pass, cel;
+    private EditText nombre, apellido, user, pass, cel, empresa;
     private Button registrar;
     private String emp;
+    private boolean admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,8 @@ public class Registro_de_usuario extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         emp = bundle.getString("Empresa");
+        admin= bundle.getBoolean("admin");
+
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +55,7 @@ public class Registro_de_usuario extends AppCompatActivity {
                 params.put("pass", pass.getText().toString());
                 params.put("empresa", emp);
                 params.put("cel", cel.getText().toString());
+                params.put("admin",admin);
 
                 //*
                 AsyncHttpClient cliente = new AsyncHttpClient();
@@ -62,7 +66,7 @@ public class Registro_de_usuario extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                         if (statusCode == 200) {
                             String datos = new String(responseBody);
-
+                            //Toast.makeText(getApplicationContext(), datos, Toast.LENGTH_LONG).show();
                             try {
                                 JSONObject json = new JSONObject(datos);
                                 if (json == null) {
@@ -102,6 +106,10 @@ public class Registro_de_usuario extends AppCompatActivity {
         });
 
 
+    }
+
+    public void cancelar(View view) {
+        finish();
     }
 }
 

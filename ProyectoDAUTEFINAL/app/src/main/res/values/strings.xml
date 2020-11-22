@@ -24,7 +24,7 @@
     <string name="boton_Modificar">Modificar</string>
     <string name="boton_Eliminar">Eliminar</string>
     <string name="boton_Iniciarsesion">Iniciar Sesión</string>
-    <string name="boton_Registrarse">Registrase</string>
+    <string name="boton_Registrarse">Registrase como empleado</string>
     <string name="boton_Marcarasistencia_entrada">Marcar entradasalida</string>
     <string name="boton_Planilla_de_pago">Ver Planilla de pago</string>
     <string name="boton_Mes_anterior">Mes Anterior</string>
@@ -33,6 +33,7 @@
     <string name="boton_Cancelar">Cancelar</string>
     <string name="boton_Actualizar">Actualizar Datos</string>
     <string name="boton_registrarse">Registrarse</string>
+    <string name="registrarse_como_administrador">Registrarse como administrador</string>
     <string name="boton_Modificar_planilla">Modificar Planilla</string>
 
     <!-- TEXTO DE ADMINISTRADOR -->
@@ -95,7 +96,7 @@
     <!--HORAS TRABAJADAS-->
     <string name="texto_tabla_Dias_trabajados">Días trabajados</string>
     <string name="titulo_tabla_Paga_por_horas_trabajadas">Paga por horas trabajadas</string>
-
+    <string name="nombre_de_la_empresa">Nombre de la empresa</string>
 
 
 </resources>

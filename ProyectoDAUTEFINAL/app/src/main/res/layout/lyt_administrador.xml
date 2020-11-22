@@ -243,7 +243,6 @@
             </LinearLayout> <!-- FIN DE LINEAR DE TAB -->
 
 
-
             <!-- ESTE TAB ES PARA ASISTENCIA -->
 
             <LinearLayout
@@ -348,7 +347,6 @@
                 </ScrollView> <!-- FIN DE SCROLL VERTICAL -->
 
             </LinearLayout> <!-- FIN DE LINEAR PARA TAB -->
-
 
 
             <!-- ESTE TAB ES PARA PLANILLA DE PAGO -->
@@ -464,7 +462,7 @@
 
                                             <RadioButton
                                                 android:id="@+id/rb_Seleccionar_planilla"
-                                                android:background="#FFFFFF"/>
+                                                android:background="#FFFFFF" />
 
                                             <!-- POSIBLE CONTENIDO DE BASE DE DATOS-->
                                         </TableRow>

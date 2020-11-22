@@ -54,8 +54,8 @@ public class Registro_con_codigo extends AppCompatActivity{
                                     Toast.makeText(getApplicationContext(),json.getString("nombre"),Toast.LENGTH_LONG).show();
                                     Intent registro=new Intent(getApplicationContext(),Registro_de_usuario.class);
                                     registro.putExtra("Empresa",json.getString("id"));
-                                    startActivity(registro);
-                                    finish();
+                                    registro.putExtra("admin",false);
+                                    abrirRegistro(registro);
 
                                 }
 
@@ -76,6 +76,17 @@ public class Registro_con_codigo extends AppCompatActivity{
                 });
             }
         });
+    }
+
+    public void registraradmin(View view) {
+        Intent ventana = new Intent(getApplicationContext(),Registrar_empresa.class);
+        ventana.putExtra("admin",true);
+        abrirRegistro(ventana);
+    }
+
+    public void abrirRegistro(Intent intent){
+        startActivity(intent);
+        finish();
     }
 
 }

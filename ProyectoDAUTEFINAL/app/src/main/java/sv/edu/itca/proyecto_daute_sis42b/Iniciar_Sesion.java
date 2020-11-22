@@ -95,10 +95,7 @@ public class Iniciar_Sesion extends AppCompatActivity {
         startActivity(ventana2);
     }
 
-    //Prueba para ver Usuario
-    public void ProcesoUsuario(View v){
-        Intent ventana2 = new Intent(Iniciar_Sesion.this,Usuario.class);
-        startActivity(ventana2);
-    }
+
+
 
 }

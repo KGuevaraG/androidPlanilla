@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sv.edu.itca.proyecto_daute_sis42b">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Informacion_Horas_trabajadas"></activity>
+        <activity android:name=".Registrar_empresa"></activity>
+        <activity android:name=".Informacion_Horas_trabajadas" />
         <activity android:name=".Registro_con_codigo" />
         <activity android:name=".Cargos" />
         <activity android:name=".Modificar_dato_Admin" />

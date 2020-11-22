@@ -65,15 +65,6 @@
                 android:onClick="ProcesoRegistro"
                 android:text="@string/boton_Registrarse" />
 
-            <Button
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorGris"
-                android:onClick="ProcesoUsuario"
-                android:text="solo para probar usuario" />
-
         </LinearLayout>
     </ScrollView>
 
