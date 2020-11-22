@@ -72,7 +72,7 @@ public class Planilla_de_pago extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_usuario,menu);
+        //getMenuInflater().inflate(R.menu.menu_usuario,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -95,6 +95,8 @@ public class Planilla_de_pago extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent Ventana_Cerrar_sesion = new Intent(Planilla_de_pago.this,Iniciar_Sesion.class);
                         startActivity(Ventana_Cerrar_sesion);
+
+                        finish();
                     }
                 });
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

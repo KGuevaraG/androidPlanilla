@@ -70,6 +70,7 @@ public class Iniciar_Sesion extends AppCompatActivity {
                                ventana.putExtra("user",usuario.getText().toString());
                                ventana.putExtra("id",datos.getString("id"));
                                startActivity(ventana);
+                               finish();
 
                            }
                         }

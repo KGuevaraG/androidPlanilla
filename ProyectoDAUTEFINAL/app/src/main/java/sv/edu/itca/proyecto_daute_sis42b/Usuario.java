@@ -85,8 +85,32 @@ public class Usuario extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.usuario_Ajustes_cuenta:
-                Intent ventana = new Intent(Usuario.this,Modificar_dato_empleado.class);
-                startActivity(ventana);
+
+                RequestParams params = new RequestParams();
+                params.put("id",id);
+
+                AsyncHttpClient client = new AsyncHttpClient();
+                String url = "http://192.168.1.2/appPlanilla/datosempleado.php";
+                client.post(url, params, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        if(statusCode==200){
+                            String respuesta = new String(responseBody);
+                            Intent ventana = new Intent(Usuario.this,Modificar_dato_empleado.class);
+                            ventana.putExtra("datos", respuesta);
+                            ventana.putExtra("id",id);
+                            startActivity(ventana);
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                    }
+                });
+
+
                 break;
 
             case R.id.Cerrar_sesion:
@@ -99,6 +123,7 @@ public class Usuario extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent Ventana_Cerrar_sesion = new Intent(Usuario.this,Iniciar_Sesion.class);
                         startActivity(Ventana_Cerrar_sesion);
+                        finish();
                     }
                 });
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

@@ -19,6 +19,7 @@ public class Administrador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lyt_administrador);
 
+
         //Titulo para Administrador
         setTitle(R.string.tituloAdmnistrador);
 

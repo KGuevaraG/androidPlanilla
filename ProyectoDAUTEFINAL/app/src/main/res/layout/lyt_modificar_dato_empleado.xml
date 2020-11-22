@@ -37,12 +37,6 @@
                 android:textColor="#040404" />
             <!--y acá el nombre nuevo de usuario que queremos poner-->
 
-            <EditText
-                android:id="@+id/et_UsuarioAntiguo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="@string/hint_nombre_antiguo" />
 
             <EditText
                 android:id="@+id/et_UsuarioNuevo"
@@ -59,27 +53,30 @@
                 android:textColor="#0B0B0B" />
 
             <EditText
-                android:id="@+id/et_Contraseñaantigua"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="5dp"
-                android:hint="@string/hint_contrasena_antigua" />
-
-            <EditText
-                android:id="@+id/et_ContraseñaNueva"
+                android:id="@+id/et_ContraseniaNueva"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_marginTop="5dp"
                 android:hint="@string/hint_contrasena_nueva" />
+            <EditText
+                android:id="@+id/et_ContraseniaNueva_repetida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/hint_contrasena_nueva_repetida" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Actualizar contraseña"
+                android:id="@+id/cb_actualizar_contrasenia"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_numero_de_telefono"
                 android:textColor="#0B0B0B" />
-
             <EditText
                 android:id="@+id/et_TelefonoNuevo"
                 android:layout_width="match_parent"
@@ -87,33 +84,37 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
                 android:hint="@string/hint_telefono_nuevo"
-                android:inputType="number" />
+                android:inputType="phone"
+                android:maxLength="9"/>
+
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/texto_departamento"
-                android:textColor="#000000" />
+                android:textColor="#0B0B0B"
+                android:text="Ingrese la contraseña para guardar los cambios"/>
 
             <EditText
-                android:id="@+id/et_DepartamentoNuevo"
+                android:id="@+id/et_Contraseniaantigua"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="@string/hint_nuevo_departamento" />
-
-            <Button
-                android:id="@+id/btnCancelar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/boton_Cancelar" />
+                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/hint_contrasena_antigua" />
 
             <Button
                 android:id="@+id/btnActualizar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/boton_Actualizar" />
+                android:text="@string/boton_Actualizar"
+                android:onClick="actualizar"/>
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="cancelar"
+                android:text="@string/boton_Cancelar" />
 
         </LinearLayout>
 

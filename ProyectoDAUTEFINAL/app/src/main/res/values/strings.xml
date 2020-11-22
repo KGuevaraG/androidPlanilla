@@ -76,8 +76,9 @@
     <string name="texto_contrasena">Contraseña</string>
     <string name="hint_contrasena_antigua">Introduzca Contraseña antigua</string>
     <string name="hint_contrasena_nueva">Introduzca Contraseña nueva</string>
+    <string name="hint_contrasena_nueva_repetida">Introduzca Contraseña nueva nuevamente</string>
     <string name="texto_numero_de_telefono">Número de teléfono</string>
-    <string name="hint_telefono_nuevo">Introduzca Teléfono Nuevo</string>
+    <string name="hint_telefono_nuevo">0000-0000</string>
     <string name="texto_departamento">Departamento</string>
     <string name="hint_nuevo_departamento">Nuevo Departamento</string>
 
