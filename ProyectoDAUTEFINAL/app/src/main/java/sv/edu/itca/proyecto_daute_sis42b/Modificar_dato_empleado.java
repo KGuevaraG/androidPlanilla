@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,9 +25,11 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 
 public class Modificar_dato_empleado extends AppCompatActivity {
-    private EditText usuario, passAterior, passNew,passNewR, tel;
-    private CheckBox cambiarPass;
+    private EditText usuario, passAterior, passNew,passNewR, tel,salario;
+    private CheckBox cambiarPass, newAdmin;
     private  String datos, id;
+    private Button eliminar;
+    private boolean admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +37,17 @@ public class Modificar_dato_empleado extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         datos = bundle.getString("datos");
         id = bundle.getString("id");
+        admin=bundle.getBoolean("admin");
         usuario = findViewById(R.id.et_UsuarioNuevo);
         passAterior = findViewById(R.id.et_Contraseniaantigua);
+        eliminar = findViewById(R.id.btn_Eliminar_empleado);
+        newAdmin = findViewById(R.id.newAdmin);
+        newAdmin.setEnabled(admin);
+        newAdmin.setChecked(false);
+        salario=findViewById(R.id.et_Salario);
+        salario.setEnabled(admin);
+        eliminar.setEnabled(admin);
+        passAterior.setEnabled(!admin);
         passNew = findViewById(R.id.et_ContraseniaNueva);
         passNewR = findViewById(R.id.et_ContraseniaNueva_repetida);
         tel = findViewById(R.id.et_TelefonoNuevo);
@@ -46,6 +58,7 @@ public class Modificar_dato_empleado extends AppCompatActivity {
             if(jsonObject!=null){
                 usuario.setText(jsonObject.getString("usuario"));
                 tel.setText(jsonObject.getString("tel"));
+                salario.setText(jsonObject.getString("salario"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -53,6 +66,37 @@ public class Modificar_dato_empleado extends AppCompatActivity {
 
         //Titulo para Administrador
         setTitle(R.string.titulo_Modificar_Empleado);
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RequestParams params = new RequestParams();
+                params.put("id",id);
+                AsyncHttpClient client = new AsyncHttpClient();
+                String url = "http://192.168.1.2/appplanilla/delete.php";
+                client.post(url, params, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        if(statusCode==200){
+                            String s =new String(responseBody);
+
+                            try {
+                                JSONObject jsonObject = new JSONObject(s);
+                                Toast.makeText(getApplicationContext(),jsonObject.getString("resultado"),Toast.LENGTH_LONG).show();
+                                finish();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                    }
+                });
+            }
+        });
     }
 
     @Override
@@ -101,6 +145,19 @@ public class Modificar_dato_empleado extends AppCompatActivity {
         params.put("user",usuario.getText().toString());
         params.put("pass",passAterior.getText().toString());
         params.put("tel",tel.getText().toString());
+        params.put("admin",admin);
+
+        if(admin){
+            params.put("salario",salario.getText().toString());
+        }else {
+            params.put("salario",0);
+        }
+        if(newAdmin.isChecked()){
+            params.put("newAdmin",true);
+        }else {
+            params.put("newAdmin",false);
+        }
+
 
         if(cambiarPass.isChecked()){
             params.put("passnew",passNew.getText().toString());
@@ -117,7 +174,9 @@ public class Modificar_dato_empleado extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if(statusCode==200){
+
                     String s = new String(responseBody);
+
                     try {
                         JSONObject jsonObject = new JSONObject(s);
 

@@ -7,16 +7,7 @@
         android:orderInCategory="1"
         app:showAsAction="never"
         />
-    <item android:id="@+id/admin_cargos"
-        android:title="Administrar Cargos"
-        android:orderInCategory="1"
-        app:showAsAction="never"
-        />
-    <item android:id="@+id/admin_departamentos"
-        android:title="Administrar Departamentos"
-        android:orderInCategory="1"
-        app:showAsAction="never"
-        />
+
     <item android:id="@+id/admin_Cerrar_sesion"
         android:title="Cerrar Sesión"
         android:orderInCategory="1"

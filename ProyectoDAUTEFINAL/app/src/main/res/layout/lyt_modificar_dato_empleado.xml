@@ -86,7 +86,25 @@
                 android:hint="@string/hint_telefono_nuevo"
                 android:inputType="phone"
                 android:maxLength="9"/>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salario"
+                android:textColor="#0B0B0B" />
+            <EditText
+                android:id="@+id/et_Salario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/monto"
+                android:inputType="numberDecimal"
+                android:maxLength="9"/>
+            <CheckBox
+                android:id="@+id/newAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Administrador"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -108,6 +126,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/boton_Actualizar"
                 android:onClick="actualizar"/>
+            <Button
+                android:id="@+id/btn_Eliminar_empleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eliminar"
+                />
 
             <Button
                 android:id="@+id/btnCancelar"

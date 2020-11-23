@@ -99,6 +99,8 @@ public class Usuario extends AppCompatActivity {
                             Intent ventana = new Intent(Usuario.this,Modificar_dato_empleado.class);
                             ventana.putExtra("datos", respuesta);
                             ventana.putExtra("id",id);
+                            ventana.putExtra("admin",false);
+
                             startActivity(ventana);
 
                         }

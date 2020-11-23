@@ -62,7 +62,7 @@
                             android:id="@+id/et_buscar_empleado"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:focusable="false"
+                            android:focusable="true"
                             android:hint="@string/hint_Buscar"
                             android:importantForAutofill="no"
                             android:inputType="text" />
@@ -71,30 +71,8 @@
                             android:id="@+id/btn_buscar_empleado"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Buscar" />
-
-
-                        <!-- LINEAR PARA TEXTVIEW Y SPINNER -->
-
-                        <LinearLayout
-                            android:id="@+id/lyt_ControlarEmpleados"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/texto_Departamento" />
-
-                            <Spinner
-                                android:id="@+id/spinner_Departamentos"
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content" />
-
-                        </LinearLayout>
-
+                            android:text="Modificar"
+                            android:onClick="modificar"/>
 
                         <!-- LINEAR PARA TABLAS Y SCROLL HORIZONTAL -->
                         <LinearLayout
@@ -112,6 +90,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
+
                                     <!-- TABLA PARA EMPLEADOS -->
                                     <TableLayout
                                         android:id="@+id/tabla_Empleado"
@@ -123,14 +102,9 @@
 
                                         <!-- FILA CON NOMBRES-->
                                         <TableRow>
-
                                             <TextView
                                                 android:padding="3dp"
-                                                android:text="" />
-
-                                            <TextView
-                                                android:padding="3dp"
-                                                android:text="@string/texto_tabla_ID"
+                                                android:text="@string/texto_tabla_Usuario"
                                                 android:textStyle="bold" />
 
                                             <TextView
@@ -145,47 +119,14 @@
 
                                             <TextView
                                                 android:padding="3dp"
-                                                android:text="@string/texto_tabla_Usuario"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:padding="3dp"
-                                                android:text="@string/texto_tabla_Contrasena"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:padding="3dp"
                                                 android:text="@string/texto_tabla_Telefono"
                                                 android:textStyle="bold" />
-
                                             <TextView
                                                 android:padding="3dp"
-                                                android:text="@string/texto_tabla_Departamento"
+                                                android:text="@string/texto_tabla_Salario"
                                                 android:textStyle="bold" />
 
-                                        </TableRow>
 
-                                        <TableRow>
-
-                                            <RadioButton
-                                                android:id="@+id/rb_Seleccionar_empleado"
-                                                android:background="#FFFFFF" />
-
-                                            <TextView
-                                                android:layout_marginHorizontal="1dp"
-                                                android:layout_marginBottom="1dp"
-                                                android:background="#FFFFFF"
-                                                android:padding="3dp"
-                                                android:text="1" />
-
-                                            <TextView
-                                                android:layout_marginHorizontal="1dp"
-                                                android:layout_marginBottom="1dp"
-                                                android:background="#FFFFFF"
-                                                android:padding="3dp"
-                                                android:text="Giovanni" />
-
-                                            <!-- POSIBLE CONTENIDO DE BASE DE DATOS-->
                                         </TableRow>
 
                                     </TableLayout><!-- FIN DE TABLA -->
@@ -209,29 +150,11 @@
                                 android:id="@+id/btn_Agregar_empleado"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onClick="agregar"
                                 android:text="@string/boton_Agregar" />
 
                             <!-- LINEAR PARA BOTON MODIFICAR Y ELIMINAR-->
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
 
-                                <Button
-                                    android:id="@+id/btn_Modificar_empleado"
-                                    android:layout_width="150dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/boton_Modificar" />
-
-                                <Button
-                                    android:id="@+id/btn_Eliminar_empleado"
-                                    android:layout_width="150dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/boton_Eliminar"
-                                    android:textAlignment="center" />
-
-                            </LinearLayout>
 
 
                         </LinearLayout> <!--FIN DE LINEAR PARA BOTONES -->

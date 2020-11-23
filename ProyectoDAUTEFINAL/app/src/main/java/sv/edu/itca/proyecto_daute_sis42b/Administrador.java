@@ -7,17 +7,124 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TabHost;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class Administrador extends AppCompatActivity {
+    private TableLayout tableLayout;
+    private TableRow tableRo;
+    private TextView  tvNombre, tvApellido, tvUser, tvTelefono, tvSalario;
+    private EditText et_buscar_empleado;
+    String url;
 
+    private String id, user,emprea;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lyt_administrador);
+
+        Bundle bundle = getIntent().getExtras();
+        id=bundle.getString("id");
+        user=bundle.getString("user");
+        emprea=bundle.getString("emprea");
+        tableLayout=findViewById(R.id.tabla_Empleado);
+
+        et_buscar_empleado= findViewById(R.id.et_buscar_empleado);
+
+
+        RequestParams params = new RequestParams();
+        params.put("empresa",emprea);
+        params.put("user","");
+        AsyncHttpClient client = new AsyncHttpClient();
+        url="http://192.168.1.2/appplanilla/listaempleados.php";
+        client.post(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode==200){
+                    String s = new String(responseBody);
+                    try {
+
+                        JSONArray jsonArray = new JSONArray(s);
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+
+                            tableRo=new TableRow(getApplicationContext());
+
+                            tvNombre = new TextView(getApplicationContext());
+                            tvApellido = new TextView(getApplicationContext());
+                            tvUser = new TextView(getApplicationContext());
+                            tvTelefono = new TextView(getApplicationContext());
+                            tvSalario = new TextView(getApplicationContext());
+
+
+                             tvNombre.setText(object.getString("nombre"));
+                             tvApellido.setText(object.getString("apellido"));
+                             tvUser.setText(object.getString("usuario"));
+                             tvTelefono.setText(object.getString("tel"));
+                             tvSalario.setText(object.getString("salario"));
+
+                            tvNombre.setGravity(Gravity.CENTER);
+                            tvNombre.setPadding(1,1,1,1);
+
+                            tvApellido.setGravity(Gravity.CENTER);
+                            tvApellido.setPadding(1,1,1,1);
+
+                            tvUser.setGravity(Gravity.CENTER);
+                            tvUser.setPadding(1,1,1,1);
+
+                            tvTelefono.setGravity(Gravity.CENTER);
+                            tvTelefono.setPadding(1,1,1,1);
+
+                            tvSalario.setGravity(Gravity.CENTER);
+                            tvSalario.setPadding(1,1,1,1);
+
+
+
+                             tableRo.addView(tvUser);
+                             tableRo.addView(tvNombre);
+                             tableRo.addView(tvApellido);
+                             tableRo.addView(tvTelefono);
+                             tableRo.addView(tvSalario);
+
+                            tableLayout.addView(tableRo);
+
+                        }
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
 
 
         //Titulo para Administrador
@@ -43,6 +150,9 @@ public class Administrador extends AppCompatActivity {
         spec.setContent(R.id.tab3);
         spec.setIndicator("Planilla");
         tabControl.addTab(spec);
+
+
+
     }
 
     //Menu de Administrador
@@ -62,14 +172,7 @@ public class Administrador extends AppCompatActivity {
                 startActivity(ventana);
                 break;
 
-            case R.id.admin_cargos:
-                Intent ventana2 = new Intent(Administrador.this,Cargos.class);
-                startActivity(ventana2);
-                break;
-            case R.id.admin_departamentos:
-                Intent ventana3 = new Intent(Administrador.this,Departamentos.class);
-                startActivity(ventana3);
-                break;
+
             case R.id.admin_Cerrar_sesion:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this); //Codigo de dialogo de confirmacion
                 builder.setCancelable(false);
@@ -102,5 +205,54 @@ public class Administrador extends AppCompatActivity {
     }
 
 
+    public void agregar(View view) {
+        Intent intent = new Intent(getApplicationContext(),Registro_de_usuario.class);
+        intent.putExtra("Empresa",emprea);
+        intent.putExtra("admin",false);
+        startActivity(intent);
+    }
 
+    public void modificar(View view) {
+        String usuario= et_buscar_empleado.getText().toString();
+
+        RequestParams params = new RequestParams();
+        params.put("empresa",emprea);
+        params.put("user",usuario);
+
+        AsyncHttpClient client =  new AsyncHttpClient();
+
+        client.post(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                String s = new String(responseBody);
+
+                try {
+                    JSONObject jsonObject = new JSONObject(s);
+                    if(jsonObject!=null){
+                        if(jsonObject.names().get(0).equals("error")){
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("error"),Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("usuario"),Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(),Modificar_dato_empleado.class);
+                            intent.putExtra("datos",s);
+                            intent.putExtra("id",jsonObject.getString("id"));
+                            intent.putExtra("admin",true);
+                            startActivity(intent);
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Json nullo",Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(),"Json error",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+    }
 }

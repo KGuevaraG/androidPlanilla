@@ -78,7 +78,7 @@ public class Registro_de_usuario extends AppCompatActivity {
                                         Intent registro = new Intent(getBaseContext(), Iniciar_Sesion.class);
 
                                         Toast.makeText(getApplicationContext(), json.getString("exito"), Toast.LENGTH_LONG).show();
-                                        startActivity(registro);
+                                        //startActivity(registro);
                                         finish();
                                     }
 

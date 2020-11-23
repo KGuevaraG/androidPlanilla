@@ -48,7 +48,7 @@
     <string name="hint_Agregar_departamento">Agregar Departamento</string>
     <string name="hint_Agregar_cargo">Agregar Cargo</string>
     <string name="texto_tabla_Cargo">Cargo</string>
-    <string name="hint_Buscar">Buscar</string>
+    <string name="hint_Buscar">Nombre de usuario</string>
     <string name="texto_Buscar_empleado">Buscar Empleado</string>
 
 
@@ -97,6 +97,8 @@
     <string name="texto_tabla_Dias_trabajados">Días trabajados</string>
     <string name="titulo_tabla_Paga_por_horas_trabajadas">Paga por horas trabajadas</string>
     <string name="nombre_de_la_empresa">Nombre de la empresa</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="monto">Monto</string>
 
 
 </resources>
