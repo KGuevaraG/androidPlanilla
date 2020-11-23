@@ -33,9 +33,9 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 
 public class Administrador extends AppCompatActivity {
-    private TableLayout tableLayout;
+    private TableLayout tableLayout1,tableLayout2,tableLayout3;
     private TableRow tableRo;
-    private TextView  tvNombre, tvApellido, tvUser, tvTelefono, tvSalario;
+    private TextView  tvNombre, tvApellido, tvUser, tvTelefono, tvSalario, tvHoras, tvRango, tvIsss, tvAFP, tvExtras, tvTotal;
     private EditText et_buscar_empleado;
     String url;
 
@@ -49,11 +49,11 @@ public class Administrador extends AppCompatActivity {
         id=bundle.getString("id");
         user=bundle.getString("user");
         emprea=bundle.getString("emprea");
-        tableLayout=findViewById(R.id.tabla_Empleado);
+        tableLayout1=findViewById(R.id.tabla_Empleado);
 
         et_buscar_empleado= findViewById(R.id.et_buscar_empleado);
 
-
+//tabla de empleados
         RequestParams params = new RequestParams();
         params.put("empresa",emprea);
         params.put("user","");
@@ -108,7 +108,7 @@ public class Administrador extends AppCompatActivity {
                              tableRo.addView(tvTelefono);
                              tableRo.addView(tvSalario);
 
-                            tableLayout.addView(tableRo);
+                            tableLayout1.addView(tableRo);
 
                         }
 
@@ -125,6 +125,142 @@ public class Administrador extends AppCompatActivity {
 
             }
         });
+
+        //tabla de asistencia
+        tableLayout2=findViewById(R.id.tabla_Asistencia);
+        RequestParams params2 = new RequestParams();
+        params2.put("emp",emprea);
+
+        AsyncHttpClient client2 = new AsyncHttpClient();
+        url="http://192.168.1.2/appplanilla/asistencia.php";
+        client.post(url, params2, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode==200){
+                    String s = new String(responseBody);
+
+                    try {
+
+                        JSONArray jsonArray = new JSONArray(s);
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+
+                            tableRo=new TableRow(getApplicationContext());
+
+                            tvNombre = new TextView(getApplicationContext());
+                            tvHoras = new TextView(getApplicationContext());
+
+
+                            tvNombre.setText(object.getString("nombre"));
+                            tvHoras.setText(object.getString("tiempo"));
+
+                            tvNombre.setGravity(Gravity.CENTER);
+                            tvNombre.setPadding(1,1,1,1);
+
+
+                            tvHoras.setGravity(Gravity.CENTER);
+                            tvHoras.setPadding(1,1,1,1);
+
+
+
+                            tableRo.addView(tvNombre);
+
+                            tableRo.addView(tvHoras);
+
+                            tableLayout2.addView(tableRo);
+
+                        }
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+        //tabla Planilla
+        tableLayout3=findViewById(R.id.tabla_Admin_Planilla);
+        RequestParams params3 = new RequestParams();
+        params3.put("emp",emprea);
+
+        AsyncHttpClient client3 = new AsyncHttpClient();
+        url="http://192.168.1.2/appplanilla/planillapago.php";
+        client.post(url, params3, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode==200){
+                    String s = new String(responseBody);
+                    //Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+
+                    try {
+
+                        JSONArray jsonArray = new JSONArray(s);
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+
+                            float sal =Float.parseFloat(object.getString("salario"));
+
+                            float af2= (float) (sal*0.0725);
+
+                            float iss2= (float) (sal*0.075);
+
+                            float tot = sal+(af2+iss2);
+
+                            //tvRango=new TextView(getApplicationContext());
+                            tvNombre=new TextView(getApplicationContext());
+                            tvSalario= new TextView(getApplicationContext());
+                            tvHoras=new TextView(getApplicationContext());
+                            tvExtras=new TextView(getApplicationContext());
+                            tvAFP= new TextView(getApplicationContext());
+                            tvIsss=new TextView(getApplicationContext());
+                            tvTotal=new TextView(getApplicationContext());
+
+                            //tvRango.setText(object.getString("inicio")+"-"+object.getString("fin"));
+                            tvNombre.setText(object.getString("nombre")+" "+object.getString("apellido"));
+                            tvSalario.setText(object.getString("salario"));
+                            tvHoras.setText(object.getString("horasnormales"));
+                            tvExtras.setText(object.getString("horasextras"));
+                            tvAFP.setText(af2+"");
+                            tvIsss.setText(iss2+"");
+                            tvTotal.setText(tot+"");
+
+                            tableRo=new TableRow(getApplicationContext());
+
+                            //tableRo.addView(tvRango);
+                            tableRo.addView(tvNombre);
+                            tableRo.addView(tvSalario);
+                            tableRo.addView(tvHoras);
+                            tableRo.addView(tvExtras);
+                            tableRo.addView(tvIsss);
+                            tableRo.addView(tvAFP);
+                            tableRo.addView(tvTotal);
+
+                            tableLayout3.addView(tableRo);
+
+                        }
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getApplicationContext(),"error de json",Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
 
 
         //Titulo para Administrador

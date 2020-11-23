@@ -36,10 +36,7 @@ public class Cargos extends AppCompatActivity {
                 Intent ventana = new Intent(Cargos.this,Modificar_dato_Admin.class);
                 startActivity(ventana);
                 break;
-            case R.id.admin_departamentos:
-                Intent ventana2 = new Intent(Cargos.this,Departamentos.class);
-                startActivity(ventana2);
-                break;
+
             case R.id.admin_Cerrar_sesion:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this); //Codigo de dialogo de confirmacion
                 builder.setCancelable(false);

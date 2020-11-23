@@ -32,14 +32,7 @@ public class Modificar_dato_Admin extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
 
-            case R.id.admin_cargos:
-                Intent ventana2 = new Intent(Modificar_dato_Admin.this,Cargos.class);
-                startActivity(ventana2);
-                break;
-            case R.id.admin_departamentos:
-                Intent ventana3 = new Intent(Modificar_dato_Admin.this,Departamentos.class);
-                startActivity(ventana3);
-                break;
+
             case R.id.admin_Cerrar_sesion:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this); //Codigo de dialogo de confirmacion
                 builder.setCancelable(false);

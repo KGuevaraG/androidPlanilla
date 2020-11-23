@@ -211,9 +211,6 @@
 
                                 <TableRow>
 
-                                    <TextView
-                                        android:padding="3dp"
-                                        android:text="" />
 
                                     <TextView
                                         android:padding="3dp"
@@ -229,41 +226,12 @@
 
                                 </TableRow>
 
-                                <TableRow>
-
-                                    <RadioButton
-                                        android:id="@+id/rb_Seleccionar_Asistencia_empleado"
-                                        android:background="#FFFFFF" />
-
-                                    <!-- CONTENIDO DE BASE DE DATOS-->
-
-                                </TableRow>
 
                             </TableLayout>
 
                         </LinearLayout>  <!-- FIN DE LINEAR PARA TABLA DE ASISTENCIA -->
 
-                        <!-- lINEAR PARA BOTONES -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
-                            android:orientation="vertical">
 
-                            <Button
-                                android:id="@+id/btn_Mostrar_horas_trabajadas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:onClick="informacionHorastrabajadas"
-                                android:text="Mas Informacion" />
-
-                            <Button
-                                android:id="@+id/btn_Eliminar_horas_trabajadas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/boton_Eliminar" />
-
-                        </LinearLayout> <!-- FIN DE LINEAR PARA BOTONES -->
 
                     </LinearLayout> <!-- FIN DE lINEAR PARA EL CONTENIDO Y SCROLL -->
 
@@ -325,28 +293,10 @@
                                         <!-- FILA CON NOMBRES-->
                                         <TableRow>
 
-                                            <TextView
-                                                android:padding="3dp"
-                                                android:text="" />
-
-                                            <TextView
-                                                android:padding="3dp"
-                                                android:text="@string/texto_tabla_Fecha"
-                                                android:textStyle="bold" />
 
                                             <TextView
                                                 android:padding="3dp"
                                                 android:text="@string/texto_tabla_Nombre_de_empleado"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:padding="3dp"
-                                                android:text="@string/texto_tabla_Cargo"
-                                                android:textStyle="bold" />
-
-                                            <TextView
-                                                android:padding="3dp"
-                                                android:text="@string/texto_tabla_Departamento"
                                                 android:textStyle="bold" />
 
                                             <TextView
@@ -381,14 +331,6 @@
 
                                         </TableRow>
 
-                                        <TableRow>
-
-                                            <RadioButton
-                                                android:id="@+id/rb_Seleccionar_planilla"
-                                                android:background="#FFFFFF" />
-
-                                            <!-- POSIBLE CONTENIDO DE BASE DE DATOS-->
-                                        </TableRow>
 
                                     </TableLayout>
 
@@ -399,26 +341,7 @@
                         </LinearLayout><!-- FIN DE TABLA -->
 
                         <!-- lINEAR PARA BOTONES -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
-                            android:orientation="vertical">
 
-                            <Button
-                                android:id="@+id/btn_Modificar_planilla"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:onClick="informacionHorastrabajadas"
-                                android:text="@string/boton_Modificar_planilla" />
-
-                            <Button
-                                android:id="@+id/btn_Eliminar_Planilla"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/boton_Eliminar" />
-
-                        </LinearLayout> <!-- FIN DE LINEAR PARA BOTONES -->
 
                     </LinearLayout> <!-- FIN DE LINEAR PARA EL CONTENIDO Y SCROLL -->
 

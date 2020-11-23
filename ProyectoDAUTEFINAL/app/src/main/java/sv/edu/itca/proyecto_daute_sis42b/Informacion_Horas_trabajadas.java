@@ -39,14 +39,7 @@ public class Informacion_Horas_trabajadas extends AppCompatActivity {
                 startActivity(ventana);
                 break;
 
-            case R.id.admin_cargos:
-                Intent ventana2 = new Intent(Informacion_Horas_trabajadas.this,Cargos.class);
-                startActivity(ventana2);
-                break;
-            case R.id.admin_departamentos:
-                Intent ventana3 = new Intent(Informacion_Horas_trabajadas.this,Departamentos.class);
-                startActivity(ventana3);
-                break;
+
             case R.id.admin_Cerrar_sesion:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this); //Codigo de dialogo de confirmacion
                 builder.setCancelable(false);
